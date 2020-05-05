@@ -1,0 +1,11 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>{{ course.title }}</h2>
+        <h3>{{ course.teacher }}</h3>
+        <h3>{{ course.SubjectField }}</h3>
+        <h3>{{ course.rating}}/5</h3>
+        <a href="{{ course.link }}">Course Link</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'posts/base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <ul class="list-inline">
+                {% for course in object_list %}
+                <li class="list-inline-item"><a href="{{ course.link }}">{{ course.title }} by {{ course.teacher }}</a></li>
+                <li>Rating : {{ course.rating }}/5</li>
+                <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

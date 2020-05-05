@@ -1,0 +1,63 @@
+{% extends 'posts/base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags  %}
+{% block content %}
+<head>
+     <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+
+    <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
+</head>
+<body id="bg2" style="background-color: #EAE7DC">
+
+
+
+    <div class="container">
+        <div class="card w-50 h-100">
+            <div class="card-body">
+         <h1>New Course</h1>
+        <br>
+        <form method="post" novalidate >
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-info" style='background-color: #5CDB95'>Upload</button>
+        </form>
+    </div>
+        </div>
+    </div>
+`<br>
+    <div class="jumbotron" >
+        <div class="jumbtext">
+      <h2 class="display-4">What To Upload!</h2>
+        <ul>
+            <li><p class="my-4">Upload a link to a cloud file link like google drive having the course related videos or content. You can upload your local files related to the course on a cloud service and can upload the link here</p></li>
+            <li><p class="my-4">Upload a link to a website providing a free course, eg. coursera, edx etc. Many courses on these websites are free and if you had an eye on one, then upload it and spread the word!</p></li>
+            <li><p class="my-4">If you have a tutorial blog  or videos of lectures of your own or a teacher then upload the link here or a cloud file link for the lectures.</p></li>
+        </ul>
+      <hr class="my-4">
+      <p>For more information on how to upload using cloud service, click below.</p>
+      <p class="lead">
+        <a class="btn btn-info btn-lg" style='background-color: #5CDB95' href="https://support.google.com/drive/answer/2494822?co=GENIE.Platform%3DDesktop&hl=en" role="button">Learn more</a>
+      </p>
+        </div>
+
+
+</div>
+
+
+</body>
+{% endblock %}
